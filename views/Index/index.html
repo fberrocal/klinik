@@ -1,0 +1,69 @@
+<!-- CONTENEDOR PRINCIPAL -->
+<div id="container">
+    <div class="login-container fondo-imagen">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 mt-4">
+
+                <!-- CARD -->
+                <div class="card">
+
+                    <!-- CARD HEADER -->
+                    <div class="card-header text-center">
+                        <h3 style="font-size: 1.5rem;">Inicio de sesión</h3>
+                    </div>
+
+                    <!-- CARD BODY -->
+                    <div class="card-body">
+                        
+                        <!-- FORM PRINCIPAL -->
+                        <form class="form-signin login" action="" method="POST" id="validate">
+
+                            <div class="form-group input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa-solid fa-user-lock mb-2" style="color: #74C0FC;"></i> </span>
+                                </div>
+                                <input type="text" class="form-control fuente-control" required="" placeholder="Username" id="usuario" name="usuario" autofocus>
+                            </div>
+
+                            <div class="form-group input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa-solid fa-key mb-2" style="color: #74C0FC;"></i> </span>
+                                </div>
+                                <input class="form-control fuente-control" type="password" required="" placeholder="Password" id="password" name="password"  minlength="8" maxlength="20">
+                            </div>
+
+                            <center>
+                                <div class="form-group text-center m-t-20">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-lg btn-primary btn-block mt-3 mb-3 fuente-control" type="button" id="btnLogin" accesskey="13">
+                                            Ingresar
+                                            <i class="fa-solid fa-circle-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </center>
+
+                        </form>
+                        <!-- END FORM -->
+
+                        <br>
+                        
+                        <!-- CARD FOOTER -->
+                        <div class="card-footer text-center">
+                            <a href="#" class="fuente-control">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        
+                        <label id="indexMessage" class="error Message"></label>
+
+                    </div>
+                    <!-- END CARD -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- END CONTENEDOR PRINCIPAL -->

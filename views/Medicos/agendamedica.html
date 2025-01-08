@@ -1,0 +1,43 @@
+            <main class="col main-content">
+
+                <div class="continer my-2">
+
+                    <h5 class="mb-4">Agenda m&eacute;dica</h5>
+                    
+                    <!-- Filtro -->
+                    <div class="row mb-3">
+                        <div class="col-md-2">
+                            <label for="filterDate" class="form-label">Fecha de atenci&oacute;n:</label>
+                            <input type="date" id="filterDate" class="form-control fuente-control" />
+                        </div>
+                    </div>
+                    
+                    <!-- Grilla Agenda Médica -->
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-striped">
+                            <thead class="table-light table-header">
+                                <tr>
+                                    <th>*</th><th>No. Cita</th><th>Hora</th><th>Doc. Paciente</th><th>Nombre Paciente</th>
+                                    <th>Tp. Contrato</th><th>Tp. Cita</th><th>Clase</th><th>Tel. Aviso</th><th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataGrid">
+                                <!-- Los datos se llenarán dinámicamente -->
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <label id="agendaMessage" class="error Message"></label>
+                    
+                </div>
+
+            </main>
+
+        <!-- Divs abiertos en menusuperior.html -->    
+        </div>
+    </div>
+
+</body>
+</html>

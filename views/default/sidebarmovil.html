@@ -1,0 +1,27 @@
+        <!-- Menú lateral móvil -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="mobileMenuLabel">Menú</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#">
+                        <i class="fa-duotone fa-solid fa-gauge"></i>
+                        <span>Panel Principal</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-calendar-days" mr-2></i>
+                        <span>Agenda m&eacute;dica</span>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-file-contract"></i>
+                        <span>Reportes</span>
+                    </a>
+                    <a class="nav-link" href="#" onclick="sessionClose()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Log Out</span>
+                    </a> <!-- href="/genesys/system/Usuarios/destroySession" -->
+                </nav>
+            </div>
+        </div>
