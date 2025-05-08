@@ -4,7 +4,7 @@ class Principal {
     linkPrincipal(link) {
         if (link) {
             let url    = "";
-            let cadena = link.split("/"); // <-- Divide la cadena por el caracter / y generan un Array con las partes
+            let cadena = link.split("/");
     
             /* COMENTADO TEMPORALMENTE DEBE SOLUCIONARSE EL HTACCESS ERROR FILE
             // Se arma la URL explícita del controlador recibido
@@ -17,22 +17,33 @@ class Principal {
             }
             */
 
-            // Se arma la URL explícita del controlador recibido
+            // Ojo se arma una palabra tomando de la URL explícita el controlador y el método recibidos
             for (let i = 0; i < cadena.length; i++) {
-                if (cadena[i] != '') {
-                    url += cadena[i];     
-                }           
+                if (i < 2) {
+                    if (cadena[i] != '') {
+                        url += cadena[i];     
+                    }
+                }
             }
 
-            // Casos para cada módulo (link de modulo) del sistema
             switch (url) {
                 case "Medicosagendamedica":
-                        // Método();
-                        listarAgendaMedico()
+                        listarAgendaMedico();
                         break;
+                case "Medicosatenderpaciente":
+                        let cnsCita = getParameterByName('cnscit');
+                        let nroPac  = getParameterByName('idpac');
+                        let fatenc  = getParameterByName('fatencion');
+                        setInformacionMedicaPaciente(cnsCita, nroPac, fatenc);
+                        break;
+                case "MplrenderVistaPlantillas":
+                        let cns_Cita = getParameterByName('cnscit');
+                        let nro_Pac  = getParameterByName('idpac');
+                        getPlantillasCE();
+                        seterDatosPaciente(cns_Cita, nro_Pac);
                 default:
                     break;
             }
         }
-    }    
-}        
+    }
+}

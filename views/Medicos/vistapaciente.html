@@ -1,0 +1,203 @@
+            <main class="col main-content">
+
+                <!-- Cabecera para datos del paciente -->
+                <div class="infopac grid-layout mb-4">
+                    <div class="infopac__datos infopac__datos--1">
+                        <img class="infopac__item--img" src="http://localhost/klinik/assets/images/users/default.png" alt="Imagen de paciente" />
+                    </div>
+
+                    <div class="infopac__datos">ID Paciente:         <span class="infopac__item" id="infopac-id">   </span> </div>
+                    <div class="infopac__datos">Nombre:              <span class="infopac__item" id="infopac-name" ></span> </div>
+                    <div class="infopac__datos">No. Documento:       <span class="infopac__item" id="infopac-doc"  ></span> </div>
+                    <div class="infopac__datos">Tel&eacute;fono:     <span class="infopac__item" id="infopac-tel"  ></span> </div>
+                    <div class="infopac__datos">Fe. Nacimiento:      <span class="infopac__item" id="infopac-birth"></span> </div>
+                    <div class="infopac__datos">Edad:                <span class="infopac__item" id="infopac-age"  ></span> </div>
+                    <div class="infopac__datos">Fe. Atenci&oacute;n: <span class="infopac__item" id="infopac-aten" ></span> </div>
+                    <div class="infopac__datos">Eps:                 <span class="infopac__item" id="infopac-eps">  </span> </div>
+                    <div class="infopac__datos">Contrato:            <span class="infopac__item" id="infopac-cont"> </span> </div>
+                    <div class="infopac__datos">N&uacute;mero cita:  <span class="infopac__item" id="infopac-cita"> </span> </div>
+                </div>
+
+                <!-- Area de información de errores -->
+
+                <label id="pacienteMessage" class="Message"></label>
+
+                <!-- Pestañas -->
+
+                <ul class="nav nav-tabs" id="tabPaciente" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="perfil-tab" data-bs-toggle="tab" data-bs-target="#perfil" type="button" role="tab" 
+                                aria-controls="perfil" aria-selected="true" title="Información básica del paciente"> Perfil </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="antecedentes-tab" data-bs-toggle="tab" data-bs-target="#antecedentes" type="button" role="tab" 
+                                aria-controls="antecedentes" aria-selected="false" title="Antecedentes del paciente"> Antecedentes </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="hclinica-tab" data-bs-toggle="tab" data-bs-target="#hclinica" type="button" role="tab" 
+                                aria-controls="hclinica" aria-selected="false" title="Registros de historia clínica"> H. Cl&iacute;nica </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="ordmedicas-tab" data-bs-toggle="tab" data-bs-target="#ordmedicas" type="button" role="tab" 
+                                aria-controls="ordmedicas" aria-selected="false" title="Ordenes médicas"> Ord. M&eacute;dicas </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="atenciones-tab" data-bs-toggle="tab" data-bs-target="#atenciones" type="button" role="tab" 
+                                aria-controls="atenciones" aria-selected="false" title="Atenciones y diagnósticos"> Atenciones y Dx </button>
+                    </li>
+                </ul>
+
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content" id="tabPacienteContent">
+
+                    <!-- Contenido de la Pestaña Perfil -->
+                    <div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">
+                        <h6 class="perfil__title"> [ Informaci&oacute;n b&aacute;sica paciente ] </h6>
+
+                        <section class="layout__perfil--info" id="datos-paciente">
+                            <div class="perfil__campo caja">Nombres:           </div> <span class="perfil__valor caja" id="perfil-name">    </span>
+                            <div class="perfil__campo caja">Apellidos:         </div> <span class="perfil__valor caja" id="perfil-lastname"></span>
+                            <div class="perfil__campo caja">Tipo Doc.:         </div> <span class="perfil__valor caja" id="perfil-typedoc"> </span>
+                            <div class="perfil__campo caja">Nro. Doc.:         </div> <span class="perfil__valor caja" id="perfil-numdoc">  </span>
+                            <div class="perfil__campo caja">Fe. Nacimiento:    </div> <span class="perfil__valor caja" id="perfil-birth">   </span>
+                            <div class="perfil__campo caja">Edad:              </div> <span class="perfil__valor caja" id="perfil-age">     </span>
+                            <div class="perfil__campo caja">Sexo:              </div> <span class="perfil__valor caja" id="perfil-sex">     </span>
+                            <div class="perfil__campo caja">Estado civil:      </div> <span class="perfil__valor caja" id="perfil-ecivil">  </span>
+                            <div class="perfil__campo caja">Tel&eacute;fono:   </div> <span class="perfil__valor caja" id="perfil-phone">   </span>
+                            <div class="perfil__campo caja">Tel. Trabajo:      </div> <span class="perfil__valor caja" id="perfil-wphone">  </span>
+                            <div class="perfil__campo caja">Domicilio:         </div> <span class="perfil__valor caja" id="perfil-address"> </span>
+                            <div class="perfil__campo caja">Dir. Trabajo:      </div> <span class="perfil__valor caja" id="perfil-waddress"></span>
+                            <div class="perfil__campo caja">Dpto.:             </div> <span class="perfil__valor caja" id="perfil-depto">   </span>
+                            <div class="perfil__campo caja">Ciudad:            </div> <span class="perfil__valor caja" id="perfil-city">    </span>
+                            <div class="perfil__campo caja">Barrio:            </div> <span class="perfil__valor caja" id="perfil-local">   </span>
+                            <div class="perfil__campo caja">Email:             </div> <span class="perfil__valor caja" id="perfil-email">   </span>
+                            <div class="perfil__campo caja">Aseguradora (EPS): </div> <span class="perfil__valor caja" id="perfil-eps">     </span>
+                            <div class="perfil__campo caja">Tipo. Afiliado:    </div> <span class="perfil__valor caja" id="perfil-typeafi"> </span>
+                            <div class="perfil__campo caja">Nivel Afiliado:    </div> <span class="perfil__valor caja" id="perfil-levelafi"></span>
+                        </section>
+
+                        <section class="layout__perfil--sv" id="datos-sv">
+                            <h6 class="perfil__title"> [ Hist&oacute;rico signos vitales ] </h6>
+                        </section>
+                    </div>
+                    
+                    <!-- Contenido de la Pestaña Antecedentes -->
+                    <div class="tab-pane fade" id="antecedentes" role="tabpanel" aria-labelledby="">
+                    </div>
+                    
+                    <!-- Contenido de la Pestaña Historia Clínica -->
+                    <div class="tab-pane fade" id="hclinica" role="tabpanel" aria-labelledby="">
+
+                        <!-- Controles para creación de registros de historia clínica -------------------------------------
+                        <div class="row g-3 align-items-center mt-2">
+
+                            <div class="col-auto">
+                                <label id="lb-listaplt" for="lista-plt" class="col-form-label">Formulario de atenci&oacute;n:</label>
+                            </div>
+
+                            <div class="col-auto">
+                                <select class="form-select select-plantillas" id="lista-plt" name="lista-plt">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+                            <div class="col-auto">
+                                <button id="create-hc" type="button" class="btn btn-primary mr-2">
+                                    <span class="fa-solid fa-heartbeat"></span>
+                                    Atender
+                                </button>
+                            </div>
+
+                        </div>
+                        ---------------------------------------------------------------------------------------------- -->
+
+                        <div class="row g-3 align-items-center mt-2">
+                            <div class="col-auto">
+                                <button id="create-hc" type="button" class="btn btn-primary">
+                                    <!-- <span class="fa-duotone fa-solid fa-heartbeat"></span> -->
+                                    <i class="fa-solid fa-heartbeat"></i>
+                                    Crear registro cl&iacute;nico
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive mt-2">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-light table-header">
+                                    <tr>
+                                        <th>Consecutivo</th><th>Clase</th><th>Registro cl&iacute;nico</th><th>Fecha</th><th>Tipo Dx</th><th>ID Dx</th><th>Diagn&oacute;stico</th>
+                                        <th>M&eacute;dico</th><th>Acciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="registrosHca"></tbody>
+
+                            </table>
+
+                            <label id="hcaMessage" class="Message"></label>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- Contenido de la Pestaña Ordenes Médicas -->
+                    <div class="tab-pane fade" id="ordmedicas" role="tabpanel" aria-labelledby="">
+
+                        <div class="row g-3 align-items-center mt-2">
+                            <div class="col-auto">
+                                <button id="create-om" type="button" class="btn btn-primary">
+                                    <!-- <span class="fa-solid fa-heartbeat"></span> -->
+                                    <i class="fa-solid fa-pills"></i>
+                                    Crear orden m&eacute;dica
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive mt-2">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead class="table-light table-header">
+                                    <tr>
+                                       <th>No. Orden</th><th>Fecha</th><th>Cod. Prefijo</th><th>Prefijo</th><th>Autorizado</th><th>Detalles</th><th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="registrosAut">
+                                    <!-- Los datos se llenarán dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <label id="autMessage" class="Message"></label>
+
+                    </div>
+                    
+                    <!-- Contenido de la Pestaña Atenciones -->
+                    <div class="tab-pane fade" id="atenciones" role="tabpanel" aria-labelledby="">
+
+                        <!-- Registros sacados de las citas y los dx relacionados a la atención -->
+                        <!-- Detalles Atenciones y Diagnósticos -->
+
+                        <div class="table-responsive mt-2">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-light table-header">
+                                    <tr>
+                                        <th>Consecutivo</th><th>Fecha</th><th>Servicio</th><th>Aseguradora</th><th>M&eacute;dico</th><th>Cumplida</th><th>Diagnóstico</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="registrosAte">
+                                    <!-- Los datos se llenarán dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </main>
+
+        <!-- Divs abiertos en menusuperior.html -->
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,18 +1,4 @@
-# Activar RewriteEngine
-# // RewriteEngine on
-# Si el archivo solicitado no es un directorio existente
-# // RewriteCond %{REQUEST_FILENAME} !-d
-# Si el archivo solicitado no es un archivo existente
-# // RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteRule: Esto indica que se está definiendo una regla de reescritura.
-# ^(.*)$: Este es un patrón de expresión regular que coincide con cualquier cadena.
-# (.*) captura cualquier cosa (cualquier carácter, 0 o más veces) y lo almacena en el primer grupo de captura (denotado por $1).
-# index.php?url=$1: Esta es la URL de destino que se utilizará si el patrón coincide.
-# index.php es el archivo que manejará la solicitud.
-# ?url=$1 pasa la parte de la URL capturada (la que coincide con (.*)) como el valor del parámetro url en la consulta GET.
-# [QSA,L]: Estas son las banderas que modifican el comportamiento de la regla.
-# QSA (Query String Append): Indica que la cadena de consulta existente debe ser añadida a la cadena de consulta resultante.
-# L (Last): Indica que esta debe ser la última regla de reescritura aplicada si coincide, deteniendo cualquier otra regla de reescritura que pudiera aplicarse.
-# // RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-RewriteEngine On
-RewriteRule ^test$ index.php [L]
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

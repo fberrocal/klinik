@@ -1,0 +1,506 @@
+:root {
+    --campom: 4;
+    --campol: 8;
+}
+
+.select-plantillas {
+    width: 700px;
+    height: 30px;
+    color: blue;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Página de historia clinica */
+
+.slider-container {
+	width: auto;
+	margin: 0 auto;
+	height: 550px; /* ? */
+	border: 1px solid lightgray;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.step {
+    border: 0px;
+}
+#hcpages {
+    width: 100%;
+	height: 80%;
+    overflow: hidden;
+}
+.hcpage {
+    float: left; /* (Permite que el componente flote a la izquierda (float: none|left|right|initial|inherit)) */
+    width: 100%;
+}
+.slider-page.active {
+    display: block;
+}
+.slider-page {
+	display: none;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* BOTONES DE NAVEGACIÓN DEL REGISTRO CLÍNICO */
+
+#navigation {
+	width: 100%;
+    height: 8%;
+    background-color: #00ffff;
+    border-top: 1px solid #fff;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#navigation ul {
+    list-style: none;
+    float: left;
+    margin-left: 22px;
+}
+#navigation ul li {
+    float: left;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    position: relative;
+    margin: 0px 2px;
+}
+#navigation ul li a {
+    display: block;
+    height: 30px;
+    background-color: #444;
+    color: black;
+    outline: none;
+    font-weight: normal;
+    font: 0.6em "typewriter", monospace;
+    text-decoration: none;
+    line-height: 25px;
+    padding: 0px 20px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    background: #f0f0f0;
+    background:
+        -webkit-gradient(
+        	linear,
+        	left bottom,
+        	left top,
+        	color-stop(0.09, rgb(240,240,240)),
+        	color-stop(0.55, rgb(227,227,227)),
+        	color-stop(0.78, rgb(240,240,240))
+        );
+    background:
+        -moz-linear-gradient(
+        	center bottom,
+        	rgb(240,240,240) 9%,
+        	rgb(227,227,227) 55%,
+        	rgb(240,240,240) 78%
+        )
+}
+#navigation ul li a:hover,
+#navigation ul li.selected a {
+    background: #d8d8d8;
+    color: blue;
+    text-decoration: underline;
+    text-shadow:1px 1px 1px #fff;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Layout (.gridhca) */
+.registro-clinico {
+    border: 1px solid lightgray;
+}
+.grid-layout-plantilla {
+	height: 510px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;         /* 8 columnas */
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;  /* 10 filas */
+    justify-content: stretch;
+    border: 1px solid transparent;
+	overflow: hidden;
+}
+/* Tables */
+.registro-clinico table { /* <table class="table table-bordered table-striped"> */
+	width: 100%;
+	height: auto;
+	border: 0px solid #000;
+}
+.registro-clinico th, 
+.registro-clinico td {
+	font: 1em "typewriter", Arial;
+	font-size: 11px;
+	width: 25%;
+	border: 0px solid #000;
+}
+/* Form */
+/* Hacer la prueba con el form */
+.registro-clinico form {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0.5em;
+}
+.registro-clinico h1 {
+	font: 0.9em "typewriter", Arial;
+	align-self: end;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* CAMPOS DE PLANTILLA */
+/* (grid-row: 3) ubica el control en una fila específica */
+
+.form-group {
+	position: relative;
+	margin-bottom: -10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.campo {
+    margin: 10px;
+}
+.campo__label {
+	font: 0.9em "typewriter", Arial;
+	display: block;
+	margin-bottom: 5px;
+}
+
+/* Focus */
+
+.registro-clinico input:focus {
+	background: lightyellow;
+}
+.registro-clinico textarea:focus {
+	background: lightyellow;
+}
+.registro-clinico select:focus {
+	background-color: lightyellow;
+}
+
+/* ----------------------------------- 	*/
+/* Campo título 						*/
+/* ----------------------------------- 	*/
+.campo__titulo {
+    grid-column: 1 / span var(--campol);
+    color: black;
+    font-weight: bold;
+}
+
+.registro-clinico legend {
+	font: 0.9em "typewriter", Arial;
+	color: black; /* font-color: black; */
+}
+
+/* ----------------------------------- 	*/
+/* Campo Subtitulo 						*/
+/* ----------------------------------- 	*/
+.campo__subtitulo {
+    grid-column: 1 / span var(--campol);
+    color: blue;
+}
+
+/* ----------------------------------- 	*/
+/* Alfanumérico o text 					*/
+/* ----------------------------------- 	*/
+
+/*
+.labelAlfa {
+	font: 0.9em "typewriter", Arial;
+	display: block;
+	margin-bottom: 5px;
+}
+*/
+
+.campo__alfanumerico {
+	font: 0.8em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width: 100%;
+	height: 20px;
+}
+.campo__alfanumerico--s {
+    text-align: left;
+}
+.campo__alfanumerico--m {
+    grid-column: 1 / span var(--campom);
+    text-align: left;
+}
+.campo__alfanumerico--l {
+    grid-column: 1 / span var(--campol);
+    text-align: left;
+}
+
+/* .registro-clinico input[type="text"] {
+	font: 0.8em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+} */
+
+/* ----------------------------------- 	*/
+/* Memo o Textarea 						*/
+/* ----------------------------------- 	*/
+
+/*
+.labelMemo {
+	font: 0.9em "typewriter", Arial;
+	display: block;
+	margin-bottom: 5px;
+}
+*/
+
+.campo__memo {
+	font: 0.9em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width: 100%;
+	height: 40px;
+	resize: none;
+}
+.campo__memo--s {
+    text-align: left;
+}
+.campo__memo--m {
+    grid-column: 1 / span var(--campom);
+    text-align: left;
+}
+.campo__memo--l {
+    grid-column: 1 / span var(--campol);
+    text-align: left;
+}
+
+/* ----------------------------------- 	*/
+/* Lista o Select 						*/
+/* ----------------------------------- 	*/
+.campo__lista {
+	font: 0.8em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width: 100%;
+	height: 25px;
+	display: inline;
+
+	option {
+		padding: 5px;
+		color: #333;
+	}
+
+	option:selected {
+		font-weight: bold;
+	}
+}
+.campo__lista--s {
+    text-align: left;
+}
+.campo__lista--m {
+    grid-column: 1 / span var(--campom);
+    text-align: left;
+}
+.campo__lista--l {
+    grid-column: 1 / span var(--campol);
+    text-align: left;
+}
+
+/* .registro-clinico select {
+	font: 0.8em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width: 55%;
+	height: 20px;
+	display: inline;
+
+	option {
+		padding: 5px;
+		color: #333;
+	}
+
+	option:selected {
+		font-weight: bold;
+	}
+} */
+
+/* ----------------------------------- 	*/
+/* Fecha o date							*/
+/* ----------------------------------- 	*/
+.campo__fecha {
+    /* background-color: lightgreen; */
+	font: 0.8em "typewriter", Arial;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	margin: 0;
+	width:100%;
+	height: 20px;
+	background: none;
+}
+/*
+.registro-clinico input[type="date"] {
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+*/
+
+/* ----------------------------------- 	*/
+/* Fechahora o Datetime					*/
+/* ----------------------------------- 	*/
+.campo__fechahora {
+    /* background-color: lightgreen; */
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+.registro-clinico input[type="datetime-local"] {
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+
+/* ----------------------------------- 	*/
+/* Agilis (*) 							*/
+/* ----------------------------------- 	*/
+.campo__agilis {
+    background-color: lightgreen;
+}
+
+/* ----------------------------------- 	*/
+/* Numerico o number 					*/
+/* ----------------------------------- 	*/
+.campo__numerico {
+    text-align: right;
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+.registro-clinico input[type="number"] {
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+
+/* ----------------------------------- 	*/
+/* Listarel (Lista relacionada) 		*/
+/* ----------------------------------- 	*/
+.campo__listarel {
+    border: 1px solid lightgray;
+}
+
+/* ----------------------------------- 	*/
+/* Campo MultiCheck 					*/
+/* ----------------------------------- 	*/
+.campo__multicheck {
+    font-size: 0.7rem;
+	position: relative;
+	display: inline-block;
+	margin-right: 10px;
+}
+.registro-clinico input[type="checkbox"] {
+	position: relative;
+	display: inline-block;
+	margin-right: 10px;
+}
+.registro-clinico input[type="checkbox"]:before { /* Pseudo elemento para los Checkbox */
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #ccc;	
+}
+.registro-clinico input[type="checkbox"]:checked:before {
+	background-color: #2196F3;
+}
+
+/* ----------------------------------- 	*/
+/* Campo tipo TablaCrud 				*/
+/* ----------------------------------- 	*/
+.campo__tablacrud {
+    border: 1px solid lightgray;
+}
+
+/* ----------------------------------- 	*/
+/* Campo tipo Time 						*/
+/* ----------------------------------- 	*/
+.campo__time {
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+.registro-clinico input[type="time"] {
+	font: 0.8em "typewriter", Arial;
+	border: none;
+	padding: 0 10px;
+	margin: 0;
+	width: 20%;
+	height: 20px;
+	background: none;
+}
+
+/* ----------------------------------- 	*/
+/* Buttons 								*/
+/* ----------------------------------- 	*/
+.registro-clinico button {
+    padding: 5px;
+  	font: bold 0.6em Arial;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transform: rotate(-1.5deg);
+}
+.registro-clinico button:after {
+    content: " >>>";
+}
+.registro-clinico button:focus {
+    outline: none;
+    background: #000;
+    color: #fff;
+}
+.registro-clinico button:hover {
+    outline: none;
+    background: #000;
+    color: #fff;
+}
+
+/* Botones visibles y no visibles */
+
+.command__button {
+	display: none;
+}
+
+.command__button--active {
+    display: block;
+}

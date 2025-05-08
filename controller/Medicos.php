@@ -70,6 +70,11 @@
 
         }
 
+        # Vista particular para atención de pacientes
+        public function atenderpaciente() {
+            $this->getView()->render2($this, "vistapaciente", null);
+        }
+
     }
 
 ?>

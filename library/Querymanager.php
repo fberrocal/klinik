@@ -56,7 +56,7 @@
 
 			$pdo = null;
 		}
-
+		
 		# Update
 		public function update ($tabla, $params, $value, $where) {
 			try {
@@ -100,7 +100,7 @@
 					return array("results" => 0);
 				}
 			} catch (PDOException $e) {
-				return "Error: " . $e->getMessage();		// print "Error: " . $e->getMessage();
+				return "Error: " . $e->getMessage();
 			}
 			
 			$pdo = null;

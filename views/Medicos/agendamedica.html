@@ -10,6 +10,13 @@
                             <label for="filterDate" class="form-label">Fecha de atenci&oacute;n:</label>
                             <input type="date" id="filterDate" class="form-control fuente-control" />
                         </div>
+
+                        <div class="col-auto div__botonfiltro">
+                            <button id="filtro-fecha" type="button" class="btn btn-primary">
+                                <i class="fa-solid fa-people-group"></i>
+                                Listar citas
+                            </button>
+                        </div>
                     </div>
                     
                     <!-- Grilla Agenda Médica -->
@@ -18,11 +25,11 @@
                         <table class="table table-bordered table-striped">
                             <thead class="table-light table-header">
                                 <tr>
-                                    <th>*</th><th>No. Cita</th><th>Hora</th><th>Doc. Paciente</th><th>Nombre Paciente</th>
-                                    <th>Tp. Contrato</th><th>Tp. Cita</th><th>Clase</th><th>Tel. Aviso</th><th>Acciones</th>
+                                    <th>*</th><th>No. Cita</th><th>Hora</th><th>Doc. Paciente</th><th>Nombre Paciente</th><th>Tp. Contrato</th><th>Tp. Cita</th>
+                                    <th>Clase</th><th>Tel. Aviso</th><th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody id="dataGrid">
+                            <tbody id="agendaGrid">
                                 <!-- Los datos se llenarán dinámicamente -->
                             </tbody>
                         </table>

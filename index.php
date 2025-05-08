@@ -1,12 +1,12 @@
 <?php 
     require "config.php";
-
-    $url = $_GET['url'] ?? 'Index/index';
-    $url = explode('/', $url);
-
+    
     $controller = '';
     $method     = '';
     $params     = '';
+
+    $url = $_GET['url'] ?? 'Index/index';
+    $url = explode('/', $url);
 
     if(isset($url[0])) {                        // Controlador
         $controller = $url[0];
@@ -24,8 +24,6 @@
         }
     }
 
-    // [ FUNCION DE AUTOCARGA DEFINIDA ]
-    // $object = new MyClass(); // Se usa para instanciar sin necesidad del require
     spl_autoload_register(function($class){
         if(file_exists(LBS.$class.'.php')) {
             require_once LBS.$class.'.php';

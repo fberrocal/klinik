@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Add footer
     if (foot) {
-        foot.innerHTML += FOOTER
+        foot.innerHTML += foot;
     }
     
 })

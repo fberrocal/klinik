@@ -1,48 +1,49 @@
+/* Estilos generales del sistema de información */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}*/
-/****************
-    Body and HTML document
-*****************/
+
+/* Body and HTML document */
+
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
     font-size: 0.85rem;
 }
-/****************
-    Actualy sued rules
-*****************/
+
+/* Actualy sued rules */
+
 .titulos {
     font-size: 1.2rem;
 }
+
 .header {
     background-color: #007BFF;
+    /* background-color: #635673; */
 	color: white;
 }
+
 .sidebar {
     min-height: 100%;
     background-color: #f8f9fa;
     width: 180px;
 }
+
 .sidebar .nav-link {
     color: #333;
 }
+
 .sidebar .nav-link:hover {
     color: #007bff;
 }
+
 .main-content {
     padding: 15px;
 }
-/****************
-    Original Sidebar
-*****************/
+
+/* Original Sidebar */
 .sidebar-org {
     width: 250px;
     padding: 1rem;
@@ -54,21 +55,25 @@ html, body {
 	background-color: #f4f4f4;
 	overflow-y: auto;
 }
+
 .content {
 	margin-left: 250px;
 	flex-grow: 1;
     flex: 1; /* La sección principal ocupa todo el espacio restante */
     padding: 1rem;
 }
+
 footer {
 	background-color: #343a40;
 	color: white;
 	text-align: center;
 	padding: 10px;
 }
+
 .btn-floating {
     background: url(../images/iconos/ic_reorder_whites.png); /*Esta propiadad solo acepta un valor*/
 }
+
 .side-nav {
     top: 0;
     margin: 0;
@@ -79,9 +84,11 @@ footer {
     overflow-y: auto;
     will-change: transform;
 }
+
 .Message {
     color: brown;
 }
+
 .collection {
     border: 0px solid #e0e0e0;
 }
@@ -91,24 +98,28 @@ footer {
     height: 42px;
     padding: 0px;
 }
+
 .circle {
     border-radius: 0%;
 }
+
 .row {
     margin-bottom: 0px;
 }
+
 th, td {
     padding: 5px;
 }
+
 #textError {
     visibility: hidden;
     margin-left: -200px;
     height: 0px;
     width: 0px;
 }
-/****************
-    Reglas agregadas
-*****************/
+
+/* Reglas agregadas */
+
 .fondo-imagen {
     background-image: url('../images/background/login5.jpg');
     background-size: cover;
@@ -116,18 +127,21 @@ th, td {
     height: 750px;          /* Ajusta la altura según tus necesidades */
     object-fit: contain;    /* Ajustar la imagen al contenedor */
 }
+
 .menusup-options {
     justify-content: flex-end;
 }
+
 .table-header {
     font-size: 0.85rem;
 }
+
 .fuente-control {
     font-size: 0.85rem;
 }
-/****************
-    Reglas Media responsive
-*****************/
+
+/* Reglas Media responsive */
+
 @media(max-width: 1024px) {
     .side-nav {
         display: none;

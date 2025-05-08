@@ -9,9 +9,12 @@ class DoctorProvider {
         let user = JSON.parse(localStorage.getItem("user"));
 
         if (0 < user.USUSUID && user.IDMEDICO) {
+            
             var selectedDate = new Date();
 
-            selectedDate = filterDate.valueAsDate
+            const filterDate = document.getElementById('filterDate');
+            selectedDate     = filterDate.valueAsDate
+
             let fehcaIni = fechaMotor(selectedDate, "I");
             let fehcaFin = fechaMotor(selectedDate, "F");
 
@@ -20,7 +23,7 @@ class DoctorProvider {
                 { idsede: '01', idmedico: user.IDMEDICO, fechaini: fehcaIni, fechafin: fehcaFin },
                 (response) => {
                     try {
-                        const dataGrid     = document.getElementById('dataGrid');
+                        const dataGrid     = document.getElementById('agendaGrid');
                         dataGrid.innerHTML = '';
                         var item = JSON.parse(response);
 
@@ -42,10 +45,10 @@ class DoctorProvider {
                                         <td>${item.CLASEORDEN}</td>
                                         <td>${telAviso}</td>
                                         <td>
-                                            <button class="btn btn-light btn-sm me-2" onclick="attendCit('${item.CONSECUTIVO}')" title="Atender cita">
+                                            <button class="btn btn-light btn-sm me-2" onclick="atenderCita('${item.CONSECUTIVO}','${item.IDAFILIADO}')" title="Atender cita">
                                                 <i class="fa-solid fa-stethoscope" style="color:blue;"></i>
                                             </button>
-                                            <button class="btn btn-light btn-sm" onclick="nullCit('${item.CONSECUTIVO}')" title="No atendida">
+                                            <button class="btn btn-light btn-sm" onclick="anularCita('${item.CONSECUTIVO}','${item.IDAFILIADO}')" title="No atendida">
                                                 <i class="fa-regular fa-circle-xmark" style="color:red;"></i>
                                             </button>
                                         </td>
@@ -70,6 +73,11 @@ class DoctorProvider {
             );
         }
 
+    }
+
+    /* Mostrar en pantalla información del paciente que se está atendiendo */
+    restablecerPaciente(consecutivoCita, idPaciente, fechaAtencion) {
+        window.location.href = URL2 + "Medicos/atenderpaciente/?cnscit=" + consecutivoCita + "&idpac=" + idPaciente + "&fatencion=" + fechaAtencion;
     }
 
 }

@@ -1,0 +1,65 @@
+                <main class="col main-content">
+                    <!-- Cabecera para datos del paciente -->
+                    <div class="infopac grid-layout mb-2">
+
+                        <div class="infopac__datos infopac__datos--1">
+                            <img class="infopac__item--img" src="http://localhost/klinik/assets/images/users/default.png" alt="Imagen de paciente" />
+                        </div>
+
+                        <div class="infopac__datos">ID Paciente:         <span class="infopac__item" id="infopac-id">   </span> </div>
+                        <div class="infopac__datos">Nombre:              <span class="infopac__item" id="infopac-name" ></span> </div>
+                        <div class="infopac__datos">No. Documento:       <span class="infopac__item" id="infopac-doc"  ></span> </div>
+                        <div class="infopac__datos">Tel&eacute;fono:     <span class="infopac__item" id="infopac-tel"  ></span> </div>
+                        <div class="infopac__datos">Fe. Nacimiento:      <span class="infopac__item" id="infopac-birth"></span> </div>
+                        <div class="infopac__datos">Edad:                <span class="infopac__item" id="infopac-age"  ></span> </div>
+                        <div class="infopac__datos">Fe. Atenci&oacute;n: <span class="infopac__item" id="infopac-aten" ></span> </div>
+                        <div class="infopac__datos">Eps:                 <span class="infopac__item" id="infopac-eps">  </span> </div>
+                        <div class="infopac__datos">Contrato:            <span class="infopac__item" id="infopac-cont"> </span> </div>
+                        <div class="infopac__datos">N&uacute;mero cita:  <span class="infopac__item" id="infopac-cita"> </span> </div>
+
+                    </div>
+
+                    <!-- Controles para creación de registros de historia clínica ----------------------------------- -->
+                    <div class="row g-3 align-items-center mb-2">
+                        <div class="col-auto">
+                            <label id="lb-listaplt" for="lista-plt" class="col-form-label">Formulario de atenci&oacute;n:</label>
+                        </div>
+
+                        <div class="col-auto">
+                            <select class="form-select select-plantillas" id="lista-plt" name="lista-plt">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="col-auto">
+                            <button id="create-reghc" type="button" class="btn btn-primary mr-2">
+                                <i class="fa-solid fa-square-check"></i>
+                                Crear
+                            </button>
+                        </div>
+
+                        <div class="col-auto">
+                            <button id="cancel-reghc" type="button" class="btn btn-danger mr-2">
+                                <i class="fa-solid fa-xmark"></i>
+                                Cancelar
+                            </button>
+                        </div>
+
+                        <div class="col-auto">
+                            <button id="save-reghc" type="button" class="btn btn-info mr-2 command__button">
+                                <i class="fa-solid fa-check"></i>
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+
+                    <section class="registro-clinico" id="vista-plantilla" name="vista-plantilla">
+                    </section>
+
+                </main>
+        <!-- Divs abiertos en menusuperior.html -->
+        </div>
+    </div>
+
+</body>
+</html>
